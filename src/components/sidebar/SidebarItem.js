@@ -1,5 +1,6 @@
 import React from 'react'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import '../../styles/SidebarItem.css';
 
 const SidebarItem = ({ arrow, icon, label }) => {
   return (
@@ -8,9 +9,9 @@ const SidebarItem = ({ arrow, icon, label }) => {
             {arrow && (<ArrowRightIcon />)}
         </div>
 
-        <div className='sidebarItem_main'>
+        <div className='sidebarItem__main'>
             {icon}
-            <p>(label)</p>
+            <p>{label}</p>
         </div>
     </div>
   )
