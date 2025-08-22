@@ -5,17 +5,20 @@ import FileItem from './FileItem'
 import FileCard from './FileCard'
 
 import { db } from '../../firebase'
+import { collection, onSnapshot } from 'firebase/firestore'
 
 const FilesView = () => {
     const [files, setFiles] = useState([])
 
     useEffect(() => {
-        db.collection('myFiles').onSnapshot(snapshot => {
+        const unsubscribe = onSnapshot(collection(db, 'myFiles'), snapshot => {
             setFiles(snapshot.docs.map(doc => ({
                 id: doc.id,
                 item: doc.data()
             })))
         })
+        
+        return () => unsubscribe()
     }, [])
 
     console.log(files)
@@ -37,6 +40,7 @@ const FilesView = () => {
                 <div className="fileView__titles--right">
                     <p>Last modified</p>
                     <p>File size</p>
+                    <p style={{ width: '40px' }}></p> {/* Space for delete button */}
                 </div>
             </div>
             {

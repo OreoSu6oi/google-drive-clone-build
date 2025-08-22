@@ -93,4 +93,13 @@
     width: 32px;
     object-fit: cover;
     margin-left: 5px;
+    cursor: pointer;
+}
+
+.header__icons .MuiSvgIcon-root.user-avatar {
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    margin-left: 5px;
+    cursor: pointer;
 }

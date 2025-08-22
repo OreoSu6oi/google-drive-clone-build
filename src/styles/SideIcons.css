@@ -1,0 +1,58 @@
+.sideIcons{
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 1px solid rgb(219, 219, 219);
+    background-color: #f8f9fa;
+    height: calc(100vh - 64px);
+    position: fixed;
+    right: 0;
+    top: 64px; /* Adjust based on header height */
+    z-index: 100;
+}
+
+.sideIcons__top{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sideIcons__top>img{
+    object-fit: contain;
+    width: 30px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.sideIcons__top>img:hover{
+    transform: scale(1.1);
+}
+
+.sideIcons>hr{
+    margin: 12px 0;
+    width: 90%;
+}
+
+.sideIcons__plusIcon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+    color: #5f6368;
+
+}
+
+.sideIcons__plusIcon svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+}
+
+.sideIcons__plusIcon:hover{
+    background-color: #e8eaed;
+}

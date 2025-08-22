@@ -7,8 +7,11 @@ import SearchIcon from '@mui/icons-material/Search';
 import AppsIcon from '@mui/icons-material/Apps';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import SettingsIcon from '@mui/icons-material/Settings';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const index = ({ userPhoto }) => {
+    console.log('User photo URL:', userPhoto); // Debug log
+    
     return (
         <div className='header'>
             <div className="header__logo">
@@ -28,7 +31,20 @@ const index = ({ userPhoto }) => {
                     <SettingsIcon />
                 </span>
                 <AppsIcon />
-                <img src={userPhoto} alt="User Photo"/>
+                {userPhoto && userPhoto !== 'null' && userPhoto !== 'undefined' ? (
+                    <img src={userPhoto} alt="User Photo" onError={(e) => {
+                        e.target.style.display = 'none';
+                        e.target.nextSibling.style.display = 'block';
+                    }}/>
+                ) : null}
+                <AccountCircleIcon 
+                    className="user-avatar" 
+                    style={{ 
+                        fontSize: 32, 
+                        color: '#5f6368',
+                        display: userPhoto && userPhoto !== 'null' && userPhoto !== 'undefined' ? 'none' : 'block'
+                    }} 
+                />
             </div>
         </div>
     )
