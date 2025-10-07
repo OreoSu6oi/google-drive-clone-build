@@ -14,7 +14,7 @@ A React-based Google Drive clone with Firebase integration for file storage and 
 
 ## Demo
 
-*Add a screenshot or live link here if available.*
+![GitHub Clone Screenshot](src/media/github-clone.png)
 
 ## Built With
 
