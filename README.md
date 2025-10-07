@@ -1,14 +1,16 @@
 # Google Drive Clone
 
-A web-based Google Drive clone application for uploading, organizing, and accessing files securely—built using modern web development technologies.
+A React-based Google Drive clone with Firebase integration for file storage and authentication. Upload, organize, and access files securely with a clean, intuitive interface inspired by Google Drive.
 
 ## Features
 
-- Upload, view, and organize files in a familiar folder structure.
-- Real-time updates for file uploads and folder changes.
-- Responsive design for desktop and mobile devices.
-- User authentication (if implemented).
-- Clean, intuitive interface inspired by Google Drive.
+- 🔐 Google Authentication
+- 📁 File upload and storage
+- 🗂️ File management (view, delete, organize)
+- 📱 Responsive design for desktop and mobile devices
+- 🎨 Material-UI components
+- ⚡ Real-time updates for file uploads and folder changes
+- 🗂️ Familiar folder structure
 
 ## Demo
 
@@ -19,46 +21,115 @@ A web-based Google Drive clone application for uploading, organizing, and access
 - **JavaScript** (69.9%)
 - **CSS** (27.5%)
 - **HTML** (2.6%)
+- **React** - Frontend framework
+- **Firebase** - Backend services (Authentication, Storage, Firestore)
 
-## Getting Started
+## Prerequisites
 
-1. **Clone the repository:**
+Before you begin, ensure you have the following installed:
+- Node.js (version 14 or higher)
+- npm or yarn
+- A Google account for Firebase setup
 
+## Setup Instructions
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/OreoSu6oi/google-drive-clone-build.git
-
-2. **Navigate into the project directory:**
-
 cd google-drive-clone-build
+```
 
-3. **Install dependencies:**
+### 2. Install Dependencies
 
+```bash
+# Using npm
 npm install
 
-4. **Start the development server:**
+# Or using yarn
+yarn install
+```
 
+### 3. Firebase Configuration
+
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project or use an existing one
+3. Enable Authentication and Firestore Database
+4. Enable Storage
+5. Copy your Firebase configuration
+6. Replace the configuration in `src/firebase.js`:
+
+```javascript
+const firebaseConfig = {
+  apiKey: "your-api-key",
+  authDomain: "your-project.firebaseapp.com",
+  projectId: "your-project-id",
+  storageBucket: "your-project.appspot.com",
+  messagingSenderId: "your-sender-id",
+  appId: "your-app-id"
+};
+```
+
+### 4. Start the Development Server
+
+```bash
+# Using npm
 npm start
 
-5. **Open your browser and visit:**
-   
-http://localhost:3000
+# Or using yarn
+yarn start
+```
 
+The application will open at `http://localhost:3000`
 
-## Folder Structure
+## Project Structure
 
-- `/src` — Main source code (components, styles, utilities).
-- `/public` — Static assets and root HTML.
-- `/README.md` — Project documentation.
+```
+src/
+├── components/
+│   ├── filesView/     # File display components
+│   ├── header/        # Header component
+│   ├── sidebar/       # Sidebar navigation
+│   └── sideIcons/     # Right sidebar icons
+├── styles/            # CSS files
+├── media/             # Static assets
+├── App.js             # Main app component
+├── firebase.js        # Firebase configuration
+└── index.js           # App entry point
+```
+
+## Available Scripts
+
+- `npm start` or `yarn start` - Runs the app in development mode
+- `npm build` or `yarn build` - Builds the app for production
+- `npm test` or `yarn test` - Launches the test runner
+
+## Troubleshooting
+
+### Common Issues
+
+1. **ETIMEDOUT Error**: Clear cache and reinstall dependencies
+   ```bash
+   rm -rf node_modules yarn.lock package-lock.json
+   yarn install
+   ```
+
+2. **Firebase Authentication Issues**: Ensure your Firebase project has Authentication enabled with Google provider
+
+3. **File Upload Issues**: Check that Firebase Storage is enabled and properly configured
 
 ## Contributing
 
-Contributions are welcome! Please fork the repo and submit a pull request for review.
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Submit a pull request
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is for educational purposes.
 
 ## Acknowledgments
 
-- Inspired by Google Drive's clean UI and features.
+- Inspired by Google Drive's clean UI and features
 - [OreoSu6oi/google-drive-clone-build](https://github.com/OreoSu6oi/google-drive-clone-build)
-
